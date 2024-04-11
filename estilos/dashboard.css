@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    font-family: 'Oswald', sans-serif;
+    font-size: large;
+}
+
+body {
+    background: url('../imagens/red_galaxy.jpg');
+}
+
+nav {
+    background-color: #e0dbeb;
+}
+
+thead {
+    color: #e0dbeb;
+    font-weight: bold;
+    text-align: center;
+}
+
+tbody {
+    font-weight: bold;
+    background-color: #e0dbeb;
+    text-align: center;
+}
+
+.button{
+    position: relative;
+    display: inline-flex;
+    margin: 10px;
+}
+  
+.button a button{
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    background-color: #e41f19;
+    display: flex;
+    position:relative;
+    padding: 10px 20px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #911100;
+    -moz-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #911100;
+    box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #911100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+  
+.button a button:active{
+    top: 10px;
+    background-color: #e01a0c;
+    
+    -webkit-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -5px 0 #911100;
+    -moz-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -5px 0 #911100;
+    box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -5px 0 #911100;
+}
+  
+.button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1064px) {
+    .container tbody td, .container thead tr {
+        display: block;
+    }
+
+    .container thead tr {
+        display: none;
+    }
+
+    .container tbody td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+    }
+
+    .container tbody td:before {
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+
+    .container tbody td:last-child {
+        display: inline-flex;
+        gap: 2px;
+        padding-bottom: 1rem;
+    }
+}
+
